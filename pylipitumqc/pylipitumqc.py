@@ -11,7 +11,7 @@ import pkg_resources
 
 
 stream1 =pkg_resources.resource_stream(__name__, 'data/profile_pc.txt')
-stream2  = pkg_resources.resource_stream(__name__, 'data/pcpositive_targetlistms1_results_alex123_ms1.tab')
+stream2  = pkg_resources.resource_stream(__name__, 'data/results_alex123_ms1.tab')
 stream3 = pkg_resources.resource_stream(__name__, 'data/pctargettargetlist_results_alex123_ms2.tab')
 results = pd.read_csv(stream2, sep="\t")
 results = results[results['Is apex'] == 'YES']
