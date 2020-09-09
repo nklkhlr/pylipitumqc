@@ -27,6 +27,12 @@ GUI for quality control of LC-MS lipidomics data
 
 Features
 --------
+
+Package still under construction. To run example and produce the image below, simply run the following command on the command line:
+
+`python pylipitumqc.py` 
+
+
 .. image:: https://github.com/KSachi/pylipitumqc/blob/master/pylipitumqc/data/pyLIpiTUMqcgui.PNG
         :target: https://pypi.python.org/pypi/pylipitumqc
 
