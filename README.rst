@@ -2,6 +2,8 @@
 pylipitumqc
 ===========
 
+        
+
 
 .. image:: https://img.shields.io/pypi/v/pylipitumqc.svg
         :target: https://pypi.python.org/pypi/pylipitumqc
@@ -25,13 +27,11 @@ GUI for quality control of LC-MS lipidomics data
 
 Features
 --------
+.. image:: https://github.com/KSachi/pylipitumqc/blob/master/pylipitumqc/data/pyLIpiTUMqcgui.PNG
+        :target: https://pypi.python.org/pypi/pylipitumqc
 
-* TODO
 
-Credits
--------
 
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
 
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+
+
