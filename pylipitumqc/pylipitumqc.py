@@ -37,7 +37,7 @@ l = pg.GraphicsLayout(border=(100,100,100))
 view.setCentralItem(l)
 view.show()
 view.setWindowTitle('pyLipiTUMqc')
-view.resize(1200,100)
+view.resize(1000,800)
 pg.setConfigOptions(antialias=True)
 
 text = """Pauling Group Computational Lipidomics TUM"""
@@ -73,23 +73,27 @@ l.nextRow()
 p4 = l.addPlot(title = "LC-MS Profile",row=2, col=1, colspan=2)
 p4.setLabel('left', "Intensity")
 p4.setLabel('bottom', "m/z")
-p4.setLogMode(x=False, y=True)
 spectra = pd.read_csv(stream1, sep="\t")
 offset = 0.007
-lowerxlim = 786.600732 - (offset)
-upperxlim = 786.600732 + (offset)
+lowerxlim = 786.600732 - (2*offset)
+upperxlim = 786.600732 + (2*offset)
 mzs = spectra['m/z'].values.tolist()
 y2 = spectra['intensity'].values.tolist()    
-p4.plot(mzs, y2, pen=(255,255,255,200))
+p4.plot(mzs, y2, fillLevel=-0.3, brush=(50,50,200,100))
 lr = pg.LinearRegionItem([lowerxlim, upperxlim])
 lr.setZValue(-0.007)
 p4.addItem(lr)
+p4.setRange(xRange = [700,800],padding=0)
+p4.showGrid(x=True, y=True)
+p4.setRange(yRange= [0,100000],padding=0)
+
+
 
 p5 = l.addPlot(title = 'Tolerance Region',row=2, col=3)
 p5.plot(mzs,y2)
 p5.setLabel('left', "Intensity")
 p5.setLabel('bottom', "m/z")
-p5.setLogMode(x=False, y=True)
+p5.showGrid(x=True, y=True)
 def updatePlot():
     p5.setXRange(*lr.getRegion(), padding=0)
 def updateRegion():
